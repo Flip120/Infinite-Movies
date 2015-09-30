@@ -1,0 +1,21 @@
+{
+  "name": "InfiniteFilms",
+  "version": "0.0.1",
+  "authors": [
+    "hooptap-ccabanero <c.cabanerochaparro@gmail.com>"
+  ],
+  "description": "Infinite Films",
+  "main": "index.html",
+  "keywords": [
+    "films",
+    "movies"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
