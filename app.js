@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
-app.use('/movies', movieRoutes);
+app.use('/movie', movieRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
