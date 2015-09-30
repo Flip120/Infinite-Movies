@@ -27,8 +27,6 @@ MoviesController.prototype.getMovieDetail = function(req, res, next){
         api_key : apiData.api_key
     };
 
-    console.log(req.params);
-
     request.get({ url : url, qs : qs, json : true }, function (e, r, body) {
       res.json(body);
     });

@@ -1,8 +1,9 @@
 {
   "name": "InfiniteFilms",
   "version": "0.0.1",
+  "directory": "client/",
   "authors": [
-    "hooptap-ccabanero <c.cabanerochaparro@gmail.com>"
+    "ccabanero <c.cabanerochaparro@gmail.com>"
   ],
   "description": "Infinite Films",
   "main": "index.html",
@@ -17,5 +18,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "marionette": "~2.4.3",
+    "foundation": "~5.5.2"
+  }
 }
