@@ -1,4 +1,4 @@
-var appBaseDir  = 'client',
+var appBaseDir  = 'app',
     distBaseDir = 'dist';
 
 module.exports = (function(){

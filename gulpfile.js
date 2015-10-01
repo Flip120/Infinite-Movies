@@ -30,7 +30,7 @@ gulp.task('serve', ['sass-dev'], function(){
     });
 
     gulp.watch( sassPath + "/*.scss", ['sass-dev']);
-    gulp.watch( scriptsPath + "/*.js", ['js-dev']);
+    gulp.watch( scriptsPath + "/**/*.js", ['js-dev']);
     gulp.watch( appbasePath + "/*.html").on('change', browserSync.reload);
 
 });
