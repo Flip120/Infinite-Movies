@@ -1,0 +1,153 @@
+/****************************
+ *           VARS           *
+ ***************************/
+$primary-color : #000000;
+$secondary-color : #00CAFF;
+$text-color : #FFFFFF;
+$header-size : 0px;
+
+
+@mixin transition($transition-property, $transition-time, $method) {
+  //use: @include transition(all, 0.2s, ease-in-out);
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+
+body {
+  margin : 0px;
+  padding : 0px;
+  font : 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: $primary-color;
+  color : white;
+}
+
+.row{
+  &.full-width{
+    max-width: 100% !important;
+    .row{
+      margin: 0 auto;
+      max-width: 62.5rem;
+      background: inherit;
+    }
+
+  }
+}
+
+@media only screen {
+  .row .columns, .row .column {
+    padding-left: 0px; /* change the values to anything that you want */
+    padding-right: 0px;
+  }
+}
+
+#menu  {
+  height: $header-size;
+  background-color: $secondary-color;
+  position: fixed;
+  top : 0;
+  z-index: 10;
+  width: 100%;
+}
+
+.no-margin {
+   margin : 0!important;
+}
+.no-padding  {
+  padding : 0!important;
+}
+.text-centered {
+  text-align: center;
+}
+.centered {
+  margin: 0 auto;
+}
+.block {
+  display: block;
+}
+.none {
+  display: none;
+}
+
+.truncate {
+  line-height: 16px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-grid {
+  margin-top: $header-size;
+}
+
+.movie-cell{
+
+  .movie-info {
+    position: absolute;
+    height: 100%;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    padding: 10px 20px;
+    margin: 0 auto;
+    width: 100%;
+    text-shadow: 0px 1px 5px #000000;
+
+    .movie-name {
+      @include transition(all, 0.1s, ease-in);
+      color: #fff;
+      top: 50%;
+      left : 0;
+    }
+
+    .movie-desc {
+      @include transition(all, 0.2s, ease-in-out);
+      webkit-animation-delay: 0.2s; /* Chrome, Safari, Opera */
+      animation-delay: 0.2s;
+      color: #fff;
+      opacity: 0;
+      padding: 20px 10px 0px 10px;
+      font-weight: lighter;
+      text-align: center;
+      line-height: 14px;
+      bottom : 0;
+      left : 0;
+    }
+
+    &:hover {
+      background-color: rgba( 0,0,0, .6 )!important;
+      cursor: pointer;
+      .movie-name{
+        top: 30%;
+        color: #fff;
+
+      }
+      .movie-desc{
+        color: #fff;
+        opacity: 1;
+        padding-top: 0;
+
+      }
+    }
+
+    h3 {
+      color : $text-color;
+    }
+
+    h3,p {
+      position: absolute;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+  }
+}
+
+
