@@ -17,9 +17,10 @@ require([
     'underscore', 'backbone', 'marionette'
 ], function (_, Backbone, Mn) {
 
-    var app = new Marionette.Application();
+    var app = new Mn.Application();
 
     app.on('start', function() {
+        console.log('Application Started!');
         Backbone.history.start();
     });
 
