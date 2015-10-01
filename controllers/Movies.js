@@ -14,6 +14,7 @@ MoviesController.prototype.getMovies = function(req, res, next){
     };
 
     request.get({ url : url, qs : qs, json : true }, function (e, r, body) {
+        console.log(e);
       res.json(body);
     });
 };

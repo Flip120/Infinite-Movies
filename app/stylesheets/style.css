@@ -1,5 +1,5 @@
 /****************************
- *         COLORS           *
+ *           VARS           *
  ***************************/
 body {
   margin: 0px;
@@ -22,8 +22,12 @@ body {
     padding-right: 0px; } }
 
 #menu {
-  height: 40px;
-  background-color: #FFFFFF; }
+  height: 0px;
+  background-color: #00CAFF;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%; }
 
 .no-margin {
   margin: 0 !important; }
@@ -43,7 +47,17 @@ body {
 .none {
   display: none; }
 
-.movie-info {
+.truncate {
+  line-height: 16px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.movie-grid {
+  margin-top: 0px; }
+
+.movie-cell .movie-info {
   position: absolute;
   height: 100%;
   font-weight: bold;
@@ -53,7 +67,7 @@ body {
   margin: 0 auto;
   width: 100%;
   text-shadow: 0px 1px 5px #000000; }
-  .movie-info .movie-name {
+  .movie-cell .movie-info .movie-name {
     -webkit-transition: all 0.1s ease-in;
     -moz-transition: all 0.1s ease-in;
     -ms-transition: all 0.1s ease-in;
@@ -62,7 +76,7 @@ body {
     color: #fff;
     top: 50%;
     left: 0; }
-  .movie-info .movie-desc {
+  .movie-cell .movie-info .movie-desc {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -79,20 +93,20 @@ body {
     line-height: 14px;
     bottom: 0;
     left: 0; }
-  .movie-info:hover {
+  .movie-cell .movie-info:hover {
     background-color: rgba(0, 0, 0, 0.6) !important;
     cursor: pointer; }
-    .movie-info:hover .movie-name {
+    .movie-cell .movie-info:hover .movie-name {
       top: 30%;
       color: #fff; }
-    .movie-info:hover .movie-desc {
+    .movie-cell .movie-info:hover .movie-desc {
       color: #fff;
       opacity: 1;
       padding-top: 0; }
-  .movie-info h3 {
+  .movie-cell .movie-info h3 {
     color: #FFFFFF; }
-  .movie-info h3, .movie-info p {
+  .movie-cell .movie-info h3, .movie-cell .movie-info p {
     position: absolute;
     width: 100%; }
-  .movie-info img {
+  .movie-cell .movie-info img {
     width: 100%; }

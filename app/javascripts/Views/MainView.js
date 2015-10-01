@@ -25,7 +25,8 @@ define(['marionette',
                 });
 
                 this.getRegion('content').show(grid);
-                grid.collection.push([{},{},{},{},{},{}]);
+                //grid.collection.push([{},{},{},{},{},{}]);
+                grid.collection.fetch();
             }
 
         });
