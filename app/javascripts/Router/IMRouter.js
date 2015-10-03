@@ -7,6 +7,7 @@ define([
     'Views/MoviesGridView',
     'Collections/Movie'
 ], function(Mn, MoviesGridView, MovieCollection){
+    'use strict';
 
     return Mn.AppRouter.extend({
 
@@ -26,9 +27,9 @@ define([
             var grid = new MoviesGridView({
                 collection : new MovieCollection()
             });
+            grid.render();
 
             this.mainView.getRegion('content').show(grid);
-            grid.collection.fetch();
 
         },
 

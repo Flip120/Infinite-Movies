@@ -11,6 +11,8 @@ define(['marionette',
 
             id : 'app_container',
 
+            className : 'full-height block relative overflow-auto',
+
             regions: {
                 menu    : "#menu",
                 content : "#content"

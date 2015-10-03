@@ -29,6 +29,18 @@ body {
   z-index: 10;
   width: 100%; }
 
+.full-height {
+  height: 100% !important; }
+
+.relative {
+  position: relative !important; }
+
+.overflow-auto {
+  overflow: auto !important; }
+
+.overflow-hidden {
+  overflow: hidden !important; }
+
 .no-margin {
   margin: 0 !important; }
 
