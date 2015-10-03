@@ -27,7 +27,14 @@ define(['underscore', 'marionette',
                 };
 
                 this.loadMoviesFromServer()
-                    .then(this.storePaginationData);
+                    .then(this.storePaginationData)
+                    .then(this.scrollLimitReached.bind(this))
+                    .then((function(limitReached){
+                        if(limitReached){
+                            this.increasePageNumber();
+                            this.loadMoviesFromServer();
+                        }
+                    }).bind(this));
             },
 
             loadMoviesFromServer : function(){
@@ -49,13 +56,21 @@ define(['underscore', 'marionette',
 
             onScroll : function(e){
                 //TODO check page limit
-                if(!this.loading && this.$el.scrollTop() + this.$el.height() >= this.$el.get(0).scrollHeight) {
+                if(!this.loading && this.scrollLimitReached()) {
 
                     this.showLoader();
-                    this.paginationData.currentPage ++;
+                    this.increasePageNumber();
                     this.loadMoviesFromServer()
                     .then(this.hideLoader.bind(this));
                 }
+            },
+
+            increasePageNumber : function(){
+                this.paginationData.currentPage ++;
+            },
+
+            scrollLimitReached : function(){
+                return this.$el.scrollTop() + this.$el.height() >= this.$el.get(0).scrollHeight
             },
 
             showLoader : function(){
