@@ -10,7 +10,7 @@ define(['backbone'], function(Backbone){
 
         parse : function(data){
             data.img = 'https://image.tmdb.org/t/p/w780/' + data.backdrop_path;
-            data.overview = data.overview.substr(0, Math.min(150, data.overview.length)) + ' ...';
+            data.overview = data.overview.substr(0, Math.min(140, data.overview.length)) + ' ...';
             return data;
         },
 

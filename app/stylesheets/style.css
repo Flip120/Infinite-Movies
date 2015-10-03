@@ -1,3 +1,22 @@
+/*
+-------------------------------------------------------
+FUNCTIONS
+-------------------------------------------------------
+-------------------------------------------------------
+------------------------------------------------------- */
+/*
+-------------------------------------------------------
+MEDIA QUERIES
+------------------------------------------------------- */
+/* 0, 640px */
+/* 641px, 1024px */
+/* 1025px, 1440px */
+/* 1441px, 1920px */
+/* 1921px */
+/*
+-------------------------------------------------------
+TRANSITIONS
+------------------------------------------------------- */
 /****************************
  *           VARS           *
  ***************************/
@@ -60,8 +79,8 @@ body {
   display: none !important; }
 
 .truncate {
-  line-height: 16px;
-  -webkit-line-clamp: 3;
+  line-height: 100px;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -88,6 +107,21 @@ body {
     color: #fff;
     top: 50%;
     left: 0; }
+    @media only screen and (max-width: 40em) {
+      .movie-cell .movie-info .movie-name {
+        font-size: 1.0em; } }
+    @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+      .movie-cell .movie-info .movie-name {
+        font-size: 1.0em; } }
+    @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+      .movie-cell .movie-info .movie-name {
+        font-size: 1.2em; } }
+    @media only screen and (min-width: 90.063em) and (max-width: 120em) {
+      .movie-cell .movie-info .movie-name {
+        font-size: 1.9em; } }
+    @media only screen and (min-width: 120.063em) and (max-width: 999999999999) {
+      .movie-cell .movie-info .movie-name {
+        font-size: 1.8em; } }
   .movie-cell .movie-info .movie-desc {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -100,21 +134,40 @@ body {
     color: #fff;
     opacity: 0;
     padding: 20px 10px 0px 10px;
+    font-size: 1.0rem;
     font-weight: lighter;
     text-align: center;
     line-height: 14px;
     bottom: 0;
     left: 0; }
+    @media only screen and (max-width: 40em) {
+      .movie-cell .movie-info .movie-desc {
+        font-size: 0.6rem; } }
+    @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+      .movie-cell .movie-info .movie-desc {
+        font-size: 0.7em; } }
+    @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+      .movie-cell .movie-info .movie-desc {
+        font-size: 0.9em; } }
   .movie-cell .movie-info:hover {
     background-color: rgba(0, 0, 0, 0.6) !important;
     cursor: pointer; }
     .movie-cell .movie-info:hover .movie-name {
       top: 30%;
       color: #fff; }
+      @media only screen and (max-width: 40em) {
+        .movie-cell .movie-info:hover .movie-name {
+          display: none; } }
+      @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+        .movie-cell .movie-info:hover .movie-name {
+          top: 5%; } }
     .movie-cell .movie-info:hover .movie-desc {
       color: #fff;
       opacity: 1;
       padding-top: 0; }
+      @media only screen and (min-width: 64.063em) {
+        .movie-cell .movie-info:hover .movie-desc {
+          top: 60%; } }
   .movie-cell .movie-info h3 {
     color: #FFFFFF; }
   .movie-cell .movie-info h3, .movie-cell .movie-info p {
