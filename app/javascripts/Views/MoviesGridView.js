@@ -1,16 +1,20 @@
 /**
  * Created by Carlos on 1/10/15.
  */
-define(['marionette',
-        'Views/MovieCellView'],
-    function(Mn, MovieCellView){
+define(['underscore', 'marionette',
+        'Views/MovieCellView', 'Templates/template'],
+    function(_, Mn, MovieCellView, template){
         'use strict';
 
-        return Mn.CollectionView.extend({
+        return Mn.CompositeView.extend({
 
             className : 'movie-grid row full-width full-height relative overflow-auto',
 
+            template : _.template(template.grid),
+
             childView : MovieCellView,
+
+            childViewContainer : '#grid-content',
 
             events : {
                 'scroll' : "onScroll"
@@ -18,14 +22,21 @@ define(['marionette',
 
             initialize : function(){
 
-                this.page = 1;
+                this.paginationData = {
+                    currentPage  : 1
+                };
 
                 this.loadMoviesFromServer()
                     .then(this.storePaginationData);
             },
 
             loadMoviesFromServer : function(){
-                return this.collection.fetch({ remove : false, data: { page: this.page } });
+                this.loading = true;
+                return this.collection.fetch({ remove : false, data: { page: this.paginationData.currentPage } })
+                    .then((function(data){
+                        this.loading = false;
+                        return data;
+                    }).bind(this));
             },
 
             storePaginationData : function(data){
@@ -37,10 +48,22 @@ define(['marionette',
             },
 
             onScroll : function(e){
-                if(this.$el.scrollTop() + this.$el.height() >= this.$el.get(0).scrollHeight) {
-                    this.page ++;
-                    this.loadMoviesFromServer();
+                //TODO check page limit
+                if(!this.loading && this.$el.scrollTop() + this.$el.height() >= this.$el.get(0).scrollHeight) {
+
+                    this.showLoader();
+                    this.paginationData.currentPage ++;
+                    this.loadMoviesFromServer()
+                    .then(this.hideLoader.bind(this));
                 }
+            },
+
+            showLoader : function(){
+                this.$el.find('.grid-loader').removeClass('none');
+            },
+
+            hideLoader : function(){
+                this.$el.find('.grid-loader').addClass('none');
             }
 
         });

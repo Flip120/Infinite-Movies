@@ -27,7 +27,6 @@ define([
             var grid = new MoviesGridView({
                 collection : new MovieCollection()
             });
-            grid.render();
 
             this.mainView.getRegion('content').show(grid);
 

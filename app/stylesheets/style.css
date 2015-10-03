@@ -48,16 +48,16 @@ body {
   padding: 0 !important; }
 
 .text-centered {
-  text-align: center; }
+  text-align: center !important; }
 
 .centered {
-  margin: 0 auto; }
+  margin: 0 auto !important; }
 
 .block {
-  display: block; }
+  display: block !important; }
 
 .none {
-  display: none; }
+  display: none !important; }
 
 .truncate {
   line-height: 16px;
@@ -122,3 +122,17 @@ body {
     width: 100%; }
   .movie-cell .movie-info img {
     width: 100%; }
+
+.grid-loader {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  width: 100%; }
+  .grid-loader img {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    max-height: 100px;
+    margin-bottom: 20px; }

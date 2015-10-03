@@ -1,9 +1,9 @@
 /**
  * Created by Carlos on 1/10/15.
  */
-define(['marionette',
+define(['underscore', 'marionette',
         'Templates/template'],
-    function(Mn, templates){
+    function(_, Mn, templates){
 
         return Mn.ItemView.extend({
 
