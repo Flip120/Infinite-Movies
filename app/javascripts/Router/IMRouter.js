@@ -2,21 +2,38 @@
  * Created by Carlos on 1/10/15.
  */
 
-define(['marionette'], function(Mn){
+define([
+    'marionette',
+    'Views/MoviesGridView',
+    'Collections/Movie'
+], function(Mn, MoviesGridView, MovieCollection){
 
     return Mn.AppRouter.extend({
 
-        appRoutes: {
-            "some/route": "someMethod"
+        initialize : function(){
+            this.mainView = Mn.IMApplication.mainView;
         },
 
-        /* standard routes can be mixed with appRoutes/Controllers above */
         routes : {
-            "some/otherRoute" : "someOtherMethod"
-        },
-        someOtherMethod : function(){
-            // do something here.
-        }
+            ""          : "movieHomeScreen",
+            "movie"     : "movieHomeScreen",
+            "movie/:id" : "movieDetailScreen"
 
+        },
+
+        movieHomeScreen : function(){
+
+            var grid = new MoviesGridView({
+                collection : new MovieCollection()
+            });
+
+            this.mainView.getRegion('content').show(grid);
+            grid.collection.fetch();
+
+        },
+
+        movieDetailScreen : function(){
+
+        }
     });
 });

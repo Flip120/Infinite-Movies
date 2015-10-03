@@ -1,9 +1,8 @@
 /**
  * Created by Carlos on 1/10/15.
  */
-define(['marionette',
-        'Views/MainView'],
-    function(Mn, MainView){
+define(['backbone', 'marionette', 'Views/MainView', 'Router/IMRouter'],
+    function(Backbone, Mn, MainView, AppRouter){
 
 
     return Mn.Application.extend({
@@ -17,6 +16,12 @@ define(['marionette',
             this.mainView = new MainView();
             $('body').append(this.mainView.el);
             this.mainView.render();
+
+            Mn.IMApplication = Mn.IMApplication || this;
+
+            this.router = new AppRouter();
+
+            Backbone.history.start();
         }
     });
 });
