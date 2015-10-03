@@ -28,9 +28,10 @@ body {
   }
 }
 
+
 @media only screen {
-  .row .columns, .row .column {
-    padding-left: 0px; /* change the values to anything that you want */
+  #grid-content .columns {
+    padding-left: 0px;
     padding-right: 0px;
   }
 }
@@ -217,3 +218,11 @@ body {
   }
 }
 
+/* DETAIL */
+
+.movie-detail {
+  color : white;
+  h2 {
+    color :white;
+  }
+}

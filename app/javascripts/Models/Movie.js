@@ -9,14 +9,19 @@ define(['backbone'], function(Backbone){
         },
 
         parse : function(data){
-            data.img = 'https://image.tmdb.org/t/p/w780/' + data.backdrop_path;
-            data.overview = data.overview.substr(0, Math.min(140, data.overview.length)) + ' ...';
+            data.backdrop_path = 'https://image.tmdb.org/t/p/original/' + data.backdrop_path;
+            data.poster_path   = 'https://image.tmdb.org/t/p/w342/' + data.poster_path;
+            data.big_poster_path   = 'https://image.tmdb.org/t/p/w500/' + data.poster_path;
+            data.short_overview = data.overview.substr(0, Math.min(140, data.overview.length)) + ' ...';
             return data;
         },
 
         defaults : {
-            title    : 'No title',
-            overview : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper  eros, vel maximus tellus ullamcorper id...',
+            title    : '',
+            overview : '',
+            backdrop_path : '',
+            poster_path : '',
+            big_poster_path : ''
         }
     });
 });

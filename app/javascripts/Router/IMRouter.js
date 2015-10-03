@@ -5,8 +5,9 @@
 define([
     'marionette',
     'Views/MoviesGridView',
+    'Views/MovieDetailView',
     'Collections/Movie'
-], function(Mn, MoviesGridView, MovieCollection){
+], function(Mn, MoviesGridView, MovieDetailView, MovieCollection){
     'use strict';
 
     return Mn.AppRouter.extend({
@@ -32,8 +33,11 @@ define([
 
         },
 
-        movieDetailScreen : function(){
-
+        movieDetailScreen : function(movieId){
+            var detailView = new MovieDetailView({
+                id : movieId
+            });
+            this.mainView.getRegion('content').show(detailView);
         }
     });
 });

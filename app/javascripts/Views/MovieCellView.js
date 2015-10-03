@@ -7,7 +7,7 @@ define(['underscore', 'marionette',
 
         return Mn.ItemView.extend({
 
-            className : 'movie-cell large-3 medium-3 small-6 columns relative overflow-hidden block',
+            className : 'movie-cell large-2 medium-3 small-6 columns relative overflow-hidden block',
 
             template : _.template(templates.movieCell)
 

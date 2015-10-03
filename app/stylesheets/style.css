@@ -35,9 +35,8 @@ body {
     background: inherit; }
 
 @media only screen {
-  .row .columns, .row .column {
+  #grid-content .columns {
     padding-left: 0px;
-    /* change the values to anything that you want */
     padding-right: 0px; } }
 
 #menu {
@@ -189,3 +188,9 @@ body {
     text-align: center;
     max-height: 100px;
     margin-bottom: 20px; }
+
+/* DETAIL */
+.movie-detail {
+  color: white; }
+  .movie-detail h2 {
+    color: white; }
