@@ -21,7 +21,7 @@ define(['underscore', 'marionette',
                 var profilesBasePath = configModel.get('images').base_url;
 
                 if(typeof this.model.get('file_path') === 'string'){
-                    this.model.set('file_path', profilesBasePath + 'w185' + this.model.get('file_path'));
+                    this.model.set('file_path', profilesBasePath + 'w780' + this.model.get('file_path'));
                 }
             }
 

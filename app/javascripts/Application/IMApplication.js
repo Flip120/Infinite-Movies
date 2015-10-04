@@ -1,8 +1,8 @@
 /**
  * Created by Carlos on 1/10/15.
  */
-define(['backbone', 'marionette', 'Views/MainView', 'Router/IMRouter', 'Models/Config'],
-    function(Backbone, Mn, MainView, AppRouter, ConfigModel){
+define(['backbone', 'marionette', 'Views/MainView', 'Router/IMRouter', 'Models/Config', 'lightbox2'],
+    function(Backbone, Mn, MainView, AppRouter, ConfigModel, lightbox){
     'use strict';
 
     return Mn.Application.extend({
