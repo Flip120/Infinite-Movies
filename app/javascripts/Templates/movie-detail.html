@@ -48,22 +48,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="large-12 medium-12 small-12 columns">
-                        <h3>Cast</h3>
-                        <div class="row">
-                            <% _.each(cast_info, function(cast){
-                                    if(cast.profile_path){  %>
-                                        <div class="cast-box large-2 columns">
-                                            <div class="full-width">
-                                                <p class="full-width"><%- cast.name %></p>
-                                                <img src="<%- cast.profile_path %>" alt=""/>
-                                            </div>
+                    <div id="cast" class="large-12 medium-12 small-12 columns">
 
-                                        </div>
-                                <%  }
-                                });
-                            %>
-                        </div>
                     </div>
                 </div>
             </div>

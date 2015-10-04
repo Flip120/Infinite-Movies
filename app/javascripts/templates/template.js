@@ -4,14 +4,18 @@
 define(['text!templates/main.html',
         'text!templates/movie-grid.html',
         'text!templates/movies-cell.html',
-        'text!templates/movie-detail.html'],
-    function(main, movieGrid, movieCell, movieDetail){
+        'text!templates/movie-detail.html',
+        'text!templates/movie-cast-layout.html',
+        'text!templates/movie-cast-box.html'],
+    function(main, movieGrid, movieCell, movieDetail, castLayout, castBox){
     'use strict';
 
     return {
-        main        : main,
-        grid        : movieGrid,
-        movieCell   : movieCell,
-        movieDetail : movieDetail
+        main            : main,
+        grid            : movieGrid,
+        movieCell       : movieCell,
+        movieDetail     : movieDetail,
+        movieCastLayout : castLayout,
+        movieCastBox    : castBox
     };
 });
