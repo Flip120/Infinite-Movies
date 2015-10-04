@@ -7,7 +7,9 @@ define(['underscore', 'marionette',
 
         return Mn.ItemView.extend({
 
-            className : 'cast-box large-2 medium-1  small-3 columns relative block" ',
+            className : 'cast-box large-2 medium-2 small-3 column end',
+
+            data : 'data-equalizer-watch',
 
             template : _.template(templates.movieCastBox),
 

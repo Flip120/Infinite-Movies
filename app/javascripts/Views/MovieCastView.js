@@ -20,6 +20,12 @@ define(['underscore', 'marionette',
 
                 var configModel = Mn.IMApplication.configModel;
                 var profilesBasePath = configModel.get('images').base_url;
+            },
+
+            filter: function (child, index, collection) {
+                if(typeof child.get('profile_path') === 'string'){
+                    return child;
+                }
             }
 
         });
