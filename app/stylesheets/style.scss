@@ -251,6 +251,7 @@ body {
 
   #movie-info{
     margin-top: 30px;
+    padding-bottom: 50px;
   }
 
   #movie-overview {
@@ -306,8 +307,11 @@ body {
 
     img {
       margin: 0 auto;
-
     }
+  }
+
+  .image-box {
+    margin-bottom:  10px;
   }
 
   @media #{$large-up} {

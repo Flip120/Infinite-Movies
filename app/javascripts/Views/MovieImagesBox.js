@@ -7,11 +7,9 @@ define(['underscore', 'marionette',
 
         return Mn.ItemView.extend({
 
-            className : 'cast-box large-2 medium-2 small-6 column end',
+            className : 'image-box large-3 medium-2 small-6 column end',
 
-            data : 'data-equalizer-watch',
-
-            template : _.template(templates.movieCastBox),
+            template : _.template(templates.movieImageBox),
 
             initialize : function(){
                 this.createAbsoluteImageRoutes();
@@ -22,8 +20,8 @@ define(['underscore', 'marionette',
                 var configModel = Mn.IMApplication.configModel;
                 var profilesBasePath = configModel.get('images').base_url;
 
-                if(this.model.get('profile_path')){
-                    this.model.set('profile_path', profilesBasePath + 'w185' + this.model.get('profile_path'));
+                if(typeof this.model.get('file_path') === 'string'){
+                    this.model.set('file_path', profilesBasePath + 'w185' + this.model.get('file_path'));
                 }
             }
 

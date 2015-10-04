@@ -3,10 +3,12 @@
  */
 define(['underscore', 'marionette',
         'Views/MovieCastView',
+        'Views/MovieImagesView',
         'Models/Movie',
         'Collections/Cast',
+        'Collections/Image',
         'Templates/template'],
-    function(_, Mn, MovieCastView, MovieModel, MovieCastCollection, templates){
+    function(_, Mn, MovieCastView, MovieImageView, MovieModel, MovieCastCollection, MovieImageCollection, templates){
 
         return Mn.LayoutView.extend({
 
@@ -17,7 +19,8 @@ define(['underscore', 'marionette',
             noRenderOnShow : true,
 
             regions: {
-                cast : "#cast"
+                cast   : "#cast",
+                images : "#images"
             },
 
             initialize : function(data){
@@ -57,6 +60,12 @@ define(['underscore', 'marionette',
                 });
 
                 this.getRegion('cast').show(castSubView);
+
+                var imageSubView = new MovieImageView({
+                    collection : new MovieCastCollection(this.model.get('images').backdrops)
+                });
+
+                this.getRegion('images').show(imageSubView);
             }
 
         });

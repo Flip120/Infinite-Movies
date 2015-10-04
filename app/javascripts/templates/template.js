@@ -6,16 +6,20 @@ define(['text!templates/main.html',
         'text!templates/movies-cell.html',
         'text!templates/movie-detail.html',
         'text!templates/movie-cast-layout.html',
-        'text!templates/movie-cast-box.html'],
-    function(main, movieGrid, movieCell, movieDetail, castLayout, castBox){
+        'text!templates/movie-cast-box.html',
+        'text!templates/movie-images-layout.html',
+        'text!templates/movie-image-box.html'],
+    function(main, movieGrid, movieCell, movieDetail, castLayout, castBox, imagesLayout, imageBox){
     'use strict';
 
     return {
-        main            : main,
-        grid            : movieGrid,
-        movieCell       : movieCell,
-        movieDetail     : movieDetail,
-        movieCastLayout : castLayout,
-        movieCastBox    : castBox
+        main              : main,
+        grid              : movieGrid,
+        movieCell         : movieCell,
+        movieDetail       : movieDetail,
+        movieCastLayout   : castLayout,
+        movieCastBox      : castBox,
+        movieImagesLayout : imagesLayout,
+        movieImageBox     : imageBox
     };
 });

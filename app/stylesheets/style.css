@@ -210,7 +210,8 @@ body {
     display: block;
     margin: 0 auto; }
   .movie-detail #movie-info {
-    margin-top: 30px; }
+    margin-top: 30px;
+    padding-bottom: 50px; }
   .movie-detail #movie-overview {
     margin-top: 30px; }
     @media only screen and (max-width: 40em) {
@@ -250,6 +251,8 @@ body {
       background-color: rgba(0, 0, 0, 0.8); }
     .movie-detail .cast-box img {
       margin: 0 auto; }
+  .movie-detail .image-box {
+    margin-bottom: 10px; }
   @media only screen and (min-width: 64.063em) {
     .movie-detail div, .movie-detail span, .movie-detail label, .movie-detail p {
       font-size: 1.0rem;
