@@ -52,8 +52,7 @@ define(['underscore', 'marionette',
 
                 this.$el.css({
                     'background-image' : 'url("' + this.model.get('backdrop_path') + '")',
-                    'background-size' : 'cover',
-                    'background-position' : '50% 50%'
+
                  });
             }
 
