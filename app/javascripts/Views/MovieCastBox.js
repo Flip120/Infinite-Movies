@@ -13,7 +13,7 @@ define(['underscore', 'marionette',
 
             template : _.template(templates.movieCastBox),
 
-            initialize : function(data){
+            initialize : function(){
                 this.createAbsoluteImageRoutes();
             },
 
