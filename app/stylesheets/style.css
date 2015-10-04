@@ -191,6 +191,54 @@ body {
 
 /* DETAIL */
 .movie-detail {
-  color: white; }
-  .movie-detail h2 {
-    color: white; }
+  color: white;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif; }
+  .movie-detail h2, .movie-detail h3 {
+    color: white;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif; }
+  .movie-detail #movie-title {
+    margin-top: 30px; }
+    @media only screen and (max-width: 40em) {
+      .movie-detail #movie-title {
+        text-align: center; } }
+  .movie-detail #movie-poster {
+    display: block;
+    margin: 0 auto; }
+  .movie-detail #movie-info {
+    margin-top: 30px; }
+  .movie-detail #movie-overview {
+    margin-top: 30px; }
+    @media only screen and (max-width: 40em) {
+      .movie-detail #movie-overview {
+        font-size: 14px; } }
+  .movie-detail .rate-star {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 40px; }
+    @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+      .movie-detail .rate-star {
+        max-width: 25px; } }
+    @media only screen and (max-width: 40em) {
+      .movie-detail .rate-star {
+        max-width: 25px;
+        margin-bottom: 20px; } }
+  .movie-detail .movie-overlay {
+    background-color: rgba(0, 0, 0, 0.4); }
+  .movie-detail .cast-box {
+    margin-bottom: 10px; }
+    .movie-detail .cast-box p {
+      font-size: 10px;
+      text-align: center;
+      position: absolute;
+      bottom: 0px;
+      text-align: center; }
+    .movie-detail .cast-box img {
+      max-height: 250px;
+      margin: 0 auto; }
+  @media only screen and (min-width: 64.063em) {
+    .movie-detail div, .movie-detail span, .movie-detail label, .movie-detail p {
+      font-size: 1.0rem;
+      line-height: 1.4rem; } }
+  @media only screen and (max-width: 40em) {
+    .movie-detail {
+      font-size: 14px; } }

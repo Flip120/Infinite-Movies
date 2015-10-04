@@ -34,10 +34,19 @@ define([
         },
 
         movieDetailScreen : function(movieId){
+
+            var $this = this;
+
             var detailView = new MovieDetailView({
                 id : movieId
             });
-            this.mainView.getRegion('content').show(detailView);
+
+            detailView.model.on('sync', function(){
+                detailView.setBackgroundImage();
+                $this.mainView.getRegion('content').show(detailView);
+            });
+
+            detailView.model.fetch();
         }
     });
 });

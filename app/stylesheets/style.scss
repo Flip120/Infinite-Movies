@@ -221,8 +221,84 @@ body {
 /* DETAIL */
 
 .movie-detail {
+
   color : white;
-  h2 {
+  font-family : "Lucida Grande", Helvetica, Arial, sans-serif;
+
+  h2, h3 {
     color :white;
+    font-family : "Lucida Grande", Helvetica, Arial, sans-serif;
   }
+
+  #movie-title {
+    margin-top: 30px;
+    @media #{$small-only} {
+      text-align: center;
+    }
+  }
+
+  #movie-poster {
+    display : block;
+    margin : 0 auto;
+
+  }
+
+  #movie-info{
+    margin-top: 30px;
+  }
+
+  #movie-overview {
+    margin-top : 30px;
+    @media #{$small-only} {
+      font-size: 14px;
+    }
+  }
+
+  .rate-star {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 40px;
+
+    @media #{$medium-only} {
+      max-width: 25px;
+    }
+
+    @media #{$small-only} {
+      max-width: 25px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .movie-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .cast-box {
+    margin-bottom : 10px;
+    p {
+      font-size: 10px;
+      text-align: center;
+      position: absolute;
+      bottom : 0px;
+      text-align: center;
+    }
+
+    img {
+      max-height: 250px;
+      margin: 0 auto;
+    }
+  }
+
+  @media #{$large-up} {
+
+    div, span, label, p {
+      font-size: 1.0rem;
+      line-height: 1.4rem;
+    }
+  }
+
+  @media #{$small-only} {
+    font-size: 14px;
+  }
+
 }
