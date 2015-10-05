@@ -291,6 +291,22 @@ body {
 
   .cast-box {
 
+    @media #{$xlarge-only} {
+      height: 260px;
+    }
+
+    @media #{$large-only} {
+      height: 180px;
+    }
+
+    @media #{$medium-only} {
+      height: 180px;
+    }
+
+    @media #{$small-only} {
+      height: 280px;
+    }
+
     text-align: center;
 
     margin-bottom : 10px;
