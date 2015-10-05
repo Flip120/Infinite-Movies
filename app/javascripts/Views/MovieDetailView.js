@@ -1,14 +1,14 @@
 /**
  * Created by Carlos on 1/10/15.
  */
-define(['underscore', 'marionette',
+define(['underscore', 'backbone', 'marionette',
         'Views/MovieCastView',
         'Views/MovieImagesView',
         'Models/Movie',
         'Collections/Cast',
         'Collections/Image',
         'Templates/template'],
-    function(_, Mn, MovieCastView, MovieImageView, MovieModel, MovieCastCollection, MovieImageCollection, templates){
+    function(_, Backbone, Mn, MovieCastView, MovieImageView, MovieModel, MovieCastCollection, MovieImageCollection, templates){
 
         return Mn.LayoutView.extend({
 
@@ -17,6 +17,10 @@ define(['underscore', 'marionette',
             template : _.template(templates.movieDetail),
 
             noRenderOnShow : true,
+
+            events : {
+                'click .close-detail' : 'closeDetail'
+            },
 
             regions: {
                 cast   : "#cast",
@@ -45,14 +49,6 @@ define(['underscore', 'marionette',
                 this.model.set('director', director);
             },
 
-            setBackgroundImage : function(){
-
-                this.$el.css({
-                    'background-image' : 'url("' + this.model.get('backdrop_path') + '")'
-
-                 });
-            },
-
             onRender : function(){
 
                 var castSubView = new MovieCastView({
@@ -66,6 +62,11 @@ define(['underscore', 'marionette',
                 });
 
                 this.getRegion('images').show(imageSubView);
+            },
+
+            closeDetail : function(){
+                this.destroy();
+                window.history.back();
             }
 
         });

@@ -55,14 +55,16 @@ define(['underscore', 'marionette',
             },
 
             onScroll : function(e){
-                //TODO check page limit
-                if(!this.loading && this.scrollLimitReached()) {
-
+                if(!this.isLoadingMovies() && this.scrollLimitReached()) {
                     this.showLoader();
                     this.increasePageNumber();
                     this.loadMoviesFromServer()
                     .then(this.hideLoader.bind(this));
                 }
+            },
+
+            isLoadingMovies : function(){
+                return this.loading;
             },
 
             increasePageNumber : function(){

@@ -1,11 +1,11 @@
 /**
  * Created by Carlos on 1/10/15.
  */
-define(['backbone'], function(Backbone){
+define(['backbone', 'marionette'], function(Backbone, Mn){
     return Backbone.Model.extend({
 
         url : function(){
-            return 'http://localhost:3000/movie/' + this.get('movieId') + '/images'
+            return Mn.IMApplication.configModel.get('baseUrl') + '/movie/' + this.get('movieId') + '/images'
         }
     });
 });

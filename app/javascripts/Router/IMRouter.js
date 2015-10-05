@@ -5,9 +5,8 @@
 define([
     'marionette',
     'Views/MoviesGridView',
-    'Views/MovieDetailView',
-    'Collections/Movie'
-], function(Mn, MoviesGridView, MovieDetailView, MovieCollection){
+    'Views/MovieDetailView'
+], function(Mn, MoviesGridView, MovieDetailView){
     'use strict';
 
     return Mn.AppRouter.extend({
@@ -17,19 +16,7 @@ define([
         },
 
         routes : {
-            ""          : "movieHomeScreen",
-            "movie"     : "movieHomeScreen",
             "movie/:id" : "movieDetailScreen"
-
-        },
-
-        movieHomeScreen : function(){
-
-            var grid = new MoviesGridView({
-                collection : new MovieCollection()
-            });
-
-            this.mainView.getRegion('content').show(grid);
 
         },
 
@@ -42,8 +29,9 @@ define([
             });
 
             detailView.model.on('sync', function(){
-                detailView.setBackgroundImage();
-                $this.mainView.getRegion('content').show(detailView);
+                var regionView = $this.mainView.getRegion('detail');
+                regionView.show(detailView);
+
             });
 
             detailView.model.fetch();

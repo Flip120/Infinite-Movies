@@ -47,11 +47,24 @@ body {
   z-index: 10;
   width: 100%; }
 
+#detail {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  overflow: auto; }
+
+.full-width {
+  width: 100% !important; }
+
 .full-height {
   height: 100% !important; }
 
 .relative {
   position: relative !important; }
+
+.absolute {
+  position: absolute !important; }
 
 .overflow-auto {
   overflow: auto !important; }
@@ -194,14 +207,22 @@ body {
 .movie-detail {
   color: white;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-  overflow: auto;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed; }
+  overflow: auto; }
   .movie-detail h2, .movie-detail h3 {
     color: white;
     font-family: "Lucida Grande", Helvetica, Arial, sans-serif; }
+  .movie-detail .close-detail {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    min-height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 2; }
+    .movie-detail .close-detail:hover {
+      cursor: pointer; }
   .movie-detail #movie-title {
     margin-top: 30px; }
     @media only screen and (max-width: 40em) {
@@ -221,7 +242,7 @@ body {
   .movie-detail .rate-star {
     margin-top: 10px;
     margin-bottom: 10px;
-    max-width: 40px; }
+    max-width: 25px; }
     @media only screen and (min-width: 40.063em) and (max-width: 64em) {
       .movie-detail .rate-star {
         max-width: 25px; } }
@@ -236,7 +257,11 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     z-index: 2;
-    overflow: auto; }
+    overflow: auto;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; }
   .movie-detail .cast-box {
     text-align: center;
     margin-bottom: 10px; }

@@ -1,16 +1,16 @@
 /**
  * Created by Carlos on 1/10/15.
  */
-define(['backbone'], function(Backbone){
+define(['backbone', 'marionette'], function(Backbone, Mn){
     return Backbone.Model.extend({
 
         url : function(){
-            return 'http://localhost:3000/movie/' + this.get('id')
+            return Mn.IMApplication.configModel.get('baseUrl') + 'movie/' + this.get('id')
         },
 
         parse : function(data){
-            data.backdrop_path = 'https://image.tmdb.org/t/p/original/' + data.backdrop_path;
-            data.poster_path   = 'https://image.tmdb.org/t/p/w342/' + data.poster_path;
+            data.backdrop_path = 'https://image.tmdb.org/t/p/w1280' + data.backdrop_path;
+            data.poster_path   = 'https://image.tmdb.org/t/p/w342' + data.poster_path;
             data.big_poster_path   = 'https://image.tmdb.org/t/p/w500/' + data.poster_path;
             data.short_overview = data.overview.substr(0, Math.min(140, data.overview.length)) + ' ...';
             return data;

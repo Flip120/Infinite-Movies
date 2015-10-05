@@ -1,8 +1,8 @@
 /**
  * Created by Carlos on 1/10/15.
  */
-define(['backbone', 'marionette', 'Views/MainView', 'Router/IMRouter', 'Models/Config', 'lightbox2'],
-    function(Backbone, Mn, MainView, AppRouter, ConfigModel, lightbox){
+define(['backbone', 'marionette', 'Views/MoviesGridView','Views/MainView', 'Router/IMRouter', 'Models/Config', 'Collections/Movie', 'lightbox2'],
+    function(Backbone, Mn, GridView, MainView, AppRouter, ConfigModel, MovieCollection, lightbox){
     'use strict';
 
     return Mn.Application.extend({
@@ -12,10 +12,12 @@ define(['backbone', 'marionette', 'Views/MainView', 'Router/IMRouter', 'Models/C
         initialize : function(){
             this.initConfigModel()
             .then((function(){
+                this.storeAppRef();
                 this.initFoundation();
                 this.overrideRenderBehaviour();
                 this.initMainView();
-                this.storeAppRef();
+                this.initGridView();
+                this.initGrinView();
                 this.initAppRouter();
             }).bind(this));
         },
@@ -30,8 +32,20 @@ define(['backbone', 'marionette', 'Views/MainView', 'Router/IMRouter', 'Models/C
             this.mainView.render();
         },
 
+        initGridView : function(){
+            var gridView = new GridView({
+                collection : new MovieCollection()
+            });
+
+            this.mainView.getRegion('content').show(gridView);
+        },
+
         storeAppRef : function(){
             Mn.IMApplication = Mn.IMApplication || this;
+        },
+
+        initGrinView : function(){
+
         },
 
         initAppRouter : function(){

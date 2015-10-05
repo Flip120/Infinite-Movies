@@ -45,11 +45,26 @@ body {
   width: 100%;
 }
 
+#detail {
+  position: absolute;
+  top : 0px;
+  left: 0px;
+  display: block;
+  overflow : auto;
+}
+
+.full-width {
+  width: 100%!important;
+}
+
 .full-height {
   height: 100%!important;
 }
 .relative {
   position: relative!important;
+}
+.absolute {
+  position: absolute!important;
 }
 .overflow-auto{
   overflow: auto!important;
@@ -227,14 +242,24 @@ body {
   font-family : "Lucida Grande", Helvetica, Arial, sans-serif;
   overflow: auto;
 
-  background-size : cover;
-  background-position : 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
   h2, h3 {
     color :white;
     font-family : "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  .close-detail {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    font-size: 2rem;
+    color:white;
+    min-height:100%;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    z-index: 2;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   #movie-title {
@@ -265,7 +290,7 @@ body {
   .rate-star {
     margin-top: 10px;
     margin-bottom: 10px;
-    max-width: 40px;
+    max-width: 25px;
 
     @media #{$medium-only} {
       max-width: 25px;
@@ -287,6 +312,10 @@ body {
     position: fixed;
     z-index: 2;
     overflow: auto;
+    background-size : cover;
+    background-position : 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
   .cast-box {

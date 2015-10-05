@@ -15,7 +15,8 @@ define(['underscore', 'marionette',
 
             regions: {
                 menu    : "#menu",
-                content : "#content"
+                content : "#content",
+                detail  : "#detail"
             }
 
         });

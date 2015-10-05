@@ -6,7 +6,9 @@ define(['backbone',
     function(Backbone, MovieModel){
     return Backbone.Collection.extend({
 
-        url : 'http://localhost:3000/movie',
+        url : function(){
+            return Mn.IMApplication.configModel.get('baseUrl') + 'movie'
+        },
 
         parse : function(apiData){
             return apiData.results;
