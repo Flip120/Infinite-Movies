@@ -223,6 +223,8 @@ body {
     z-index: 2; }
     .movie-detail .close-detail:hover {
       cursor: pointer; }
+  .movie-detail #detail-info-container {
+    background-color: rgba(0, 0, 0, 0.5); }
   .movie-detail #movie-title {
     margin-top: 30px; }
     @media only screen and (max-width: 40em) {
@@ -240,7 +242,7 @@ body {
       .movie-detail #movie-overview {
         font-size: 14px; } }
   .movie-detail .rate-star {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
     max-width: 25px; }
     @media only screen and (min-width: 40.063em) and (max-width: 64em) {

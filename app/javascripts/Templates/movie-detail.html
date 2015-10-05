@@ -1,6 +1,6 @@
 <div class="animated fadeInUp movie-overlay full-width full-height" style="background-image : url(<%- backdrop_path %>)">
     <div class="close-detail">X</div>
-    <div class="row full-width">
+    <div id='detail-info-container' class="row full-width">
         <div class="large-8 large-offset-2 columns">
             <div class="large-12 medium-12 small-12 columns">
                 <h2 id="movie-title"><%- title %></h2>
@@ -48,7 +48,7 @@
                                 Homepage: <a href ='<%-homepage%>' target="_blank"><span><%- homepage %></span></a>
                             </div>
 
-                            <div class="large-12 medium-12 small-12 columns">
+                            <div class="large-10 medium-12 small-12 columns end">
                                 <p id="movie-overview"><%- overview %></p>
                             </div>
                         </div>
