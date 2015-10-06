@@ -32,9 +32,10 @@ define(['underscore', 'marionette',
                     .then((function(limitReached){
                         if(limitReached){
                             this.increasePageNumber();
-                            this.loadMoviesFromServer();
+                            return this.loadMoviesFromServer();
                         }
-                    }).bind(this));
+                    }).bind(this))
+                    .then(this.hideLoader.bind(this));
             },
 
             loadMoviesFromServer : function(){
