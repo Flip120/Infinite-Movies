@@ -1,0 +1,66 @@
+<div class="animated fadeInUp movie-overlay full-width full-height" style="background-image : url(<%- backdrop_path %>)">
+    <div class="close-detail">X</div>
+    <div id='detail-info-container' class="row full-width">
+        <div class="large-8 large-offset-2 columns">
+            <div class="large-12 medium-12 small-12 columns">
+                <h2 id="movie-title"><%- title %></h2>
+            </div>
+            <div class="large-12 medium-12 small-12 columns">
+                <div id="movie-info" class="row full-width">
+                    <div class="no-padding no-margin large-4 medium-3 small-12 columns">
+                        <img id="movie-poster" src="<%- big_poster_path %>" alt=""/>
+                        <div class="row text-centered">
+
+                            <%
+                                var i = 0,
+                                votes = Math.round(vote_average/2);
+
+                                while(i < votes){ %>
+                                    <img class="rate-star" src="images/rate-star.png" alt=""/>
+                            <%
+                                    i++;
+                                }
+                            %>
+                                <% while(i < 5){ %>
+                                    <img class="rate-star" src="images/rate-star-empty.png" alt=""/>
+                                <%
+                                    i++;
+                                }
+                            %>
+                        </div>
+                    </div>
+                    <div class="large-8 medium-9 small-12 end columns">
+                        <div class="row">
+
+                            <div class="large-12 medium-12 small-12 columns">
+                                Runtime: <span><%- runtime %> minutes</span>
+                            </div>
+
+                            <div class="large-12 medium-12 small-12 columns">
+                                Genres: <span><%- genres %></span>
+                            </div>
+
+                            <div class="large-12 medium-12 small-12 columns">
+                                Director: <span><%- director.name %></span>
+                            </div>
+
+                            <div class="large-12 medium-12 small-12 columns">
+                                Homepage: <a href ='<%-homepage%>' target="_blank"><span><%- homepage %></span></a>
+                            </div>
+
+                            <div class="large-10 medium-12 small-12 columns end">
+                                <p id="movie-overview"><%- overview %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cast" class="large-12 medium-12 small-12 columns">
+
+                    </div>
+                    <div id="images" class="large-12 medium-12 small-12 columns">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

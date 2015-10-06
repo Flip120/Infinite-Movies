@@ -1,11 +1,9 @@
 /**
  * Created by Carlos on 1/10/15.
  */
-define(['marionette',
-        'Views/MoviesGridView',
-        'Collections/Movie',
+define(['underscore', 'marionette',
         'Templates/template'],
-    function(Mn, MoviesGridView, MovieCollection, templates){
+    function(_, Mn, templates){
 
         return Mn.LayoutView.extend({
 
@@ -13,20 +11,12 @@ define(['marionette',
 
             id : 'app_container',
 
+            className : 'full-height block relative overflow-auto',
+
             regions: {
                 menu    : "#menu",
-                content : "#content"
-            },
-
-            onRender : function(){
-
-                var grid = new MoviesGridView({
-                    collection : new MovieCollection()
-                });
-
-                this.getRegion('content').show(grid);
-                //grid.collection.push([{},{},{},{},{},{}]);
-                grid.collection.fetch();
+                content : "#content",
+                detail  : "#detail"
             }
 
         });

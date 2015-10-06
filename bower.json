@@ -23,6 +23,7 @@
     "marionette": "~2.4.3",
     "foundation": "~5.5.2",
     "requirejs": "~2.1.20",
-    "requirejs-text": "~2.0.14"
+    "requirejs-text": "~2.0.14",
+    "lightbox2": "~2.8.1"
   }
 }

@@ -14,8 +14,7 @@ MoviesController.prototype.getMovies = function(req, res, next){
     };
 
     request.get({ url : url, qs : qs, json : true }, function (e, r, body) {
-        console.log(e);
-      res.json(body);
+        res.json(body);
     });
 };
 
@@ -25,7 +24,8 @@ MoviesController.prototype.getMovieDetail = function(req, res, next){
     var url  =  apiData.api_host + '/movie/' + movieId;
 
     var qs  = {
-        api_key : apiData.api_key
+        api_key : apiData.api_key,
+        append_to_response : 'videos,images,credits'
     };
 
     request.get({ url : url, qs : qs, json : true }, function (e, r, body) {

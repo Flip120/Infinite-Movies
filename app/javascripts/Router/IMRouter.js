@@ -2,21 +2,39 @@
  * Created by Carlos on 1/10/15.
  */
 
-define(['marionette'], function(Mn){
+define([
+    'marionette',
+    'Views/MoviesGridView',
+    'Views/MovieDetailView'
+], function(Mn, MoviesGridView, MovieDetailView){
+    'use strict';
 
     return Mn.AppRouter.extend({
 
-        appRoutes: {
-            "some/route": "someMethod"
+        initialize : function(){
+            this.mainView = Mn.IMApplication.mainView;
         },
 
-        /* standard routes can be mixed with appRoutes/Controllers above */
         routes : {
-            "some/otherRoute" : "someOtherMethod"
-        },
-        someOtherMethod : function(){
-            // do something here.
-        }
+            "movie/:id" : "movieDetailScreen"
 
+        },
+
+        movieDetailScreen : function(movieId){
+
+            var $this = this;
+
+            var detailView = new MovieDetailView({
+                id : movieId
+            });
+
+            detailView.model.on('sync', function(){
+                var regionView = $this.mainView.getRegion('detail');
+                regionView.show(detailView);
+
+            });
+
+            detailView.model.fetch();
+        }
     });
 });

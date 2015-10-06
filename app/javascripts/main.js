@@ -7,7 +7,8 @@ require.config({
         underscore : '../bower_components/underscore/underscore-min',
         marionette : '../bower_components/marionette/lib/backbone.marionette.min',
         text       : '../bower_components/requirejs-text/text',
-        foundation : '../bower_components/foundation/js/foundation.min'
+        foundation : '../bower_components/foundation/js/foundation.min',
+        lightbox2  : '../bower_components/lightbox2/dist/js/lightbox.min'
     },
 
     shim: {
@@ -26,6 +27,10 @@ require.config({
         },
 
         foundation : {
+            deps : ['jquery']
+        },
+
+        lightbox2 : {
             deps : ['jquery']
         }
     },
