@@ -16,8 +16,13 @@ define([
         },
 
         routes : {
+            ''          : 'homeScreen',
             "movie/:id" : "movieDetailScreen"
 
+        },
+
+        homeScreen : function(){
+            this.mainView.getRegion('detail').empty();
         },
 
         movieDetailScreen : function(movieId){
