@@ -8,13 +8,15 @@ module.exports = (function(){
             app : {
                 base    : appBaseDir,
                 sass    : appBaseDir + '/stylesheets',
-                scripts : appBaseDir + '/javascripts'
+                scripts : appBaseDir + '/javascripts',
+                images  : appBaseDir + '/images'
             },
 
             dist : {
                 base   : distBaseDir,
-                css    : distBaseDir + '/css',
-                js     : distBaseDir + '/javascripts'
+                css    : distBaseDir + '/stylesheets',
+                js     : distBaseDir + '/javascripts',
+                images  : distBaseDir + '/images'
             }
         }
     }
