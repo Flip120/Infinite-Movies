@@ -15,12 +15,14 @@ var routes = require('./gulpconfig').routes;
 var appRoutes   = routes.app,
     appbasePath = appRoutes.base,
     sassPath    = appRoutes.sass,
-    scriptsPath = appRoutes.scripts;
+    scriptsPath = appRoutes.scripts,
+    imagesPath  = appRoutes.images;
 
 var distRoutes = routes.dist,
     distBasePath = distRoutes.base,
     cssPath      = distRoutes.css,
-    jsPath       = distRoutes.js;
+    jsPath       = distRoutes.js,
+    imgDistPath  = distRoutes.images;
 
 gulp.task('serve', ['sass-dev'], function(){
 
@@ -55,7 +57,7 @@ gulp.task('sass', function() {
     gulp.src( sassPath +"/*.scss", { sourcemap : true })
         .pipe(sass())
         .pipe(gulp.dest( cssPath ))
-        .pipe(browserSync.stream())
+        .pipe(browserSync.stream());
     //.pipe(watch( sassPath + "/*.scss", ['sass']));
 });
 
@@ -66,6 +68,24 @@ gulp.task('copy-require', function(){
     .pipe(gulp.dest(jsPath))
 });
 
+gulp.task('copy-css', function(){
+
+    gulp.src(appbasePath + '/stylesheets/animate.css')
+        .pipe(gulp.dest(distBasePath + '/stylesheets'))
+});
+
+gulp.task('copy-deps', function(){
+
+    gulp.src(appbasePath + '/bower_components/**/*')
+        .pipe(gulp.dest(distBasePath + '/bower_components'))
+});
+
+gulp.task('copy-images', function(){
+
+    gulp.src(imagesPath + '/**/*')
+        .pipe(gulp.dest(imgDistPath))
+});
+
 gulp.task('minify-html', ['copy-require'], function() {
     var opts = {
         conditionals: true,
@@ -74,12 +94,9 @@ gulp.task('minify-html', ['copy-require'], function() {
 
     gulp.src( appbasePath + '/*.html')
         .pipe(minifyHTML(opts))
-        .pipe(replace('/javascripts/main', '/javascripts/main.built'))
-        .pipe(replace('/stylesheets/', '/css/'))
-        .pipe(replace('/bower_components/requirejs/require.js', '/javascripts/require.js'))
+        .pipe(replace('javascripts/main', 'javascripts/main.built'))
         .pipe(gulp.dest( distBasePath ))
-        .pipe(browserSync.stream())
-    //.pipe(watch( appbasePath + "/*.html", ['minify-html']));
+        .pipe(browserSync.stream());
 });
 
 gulp.task('requirejsBuild', function() {
@@ -93,7 +110,10 @@ gulp.task('requirejsBuild', function() {
             'jquery': '../bower_components/jquery/dist/jquery',
             'underscore': '../bower_components/underscore/underscore',
             'backbone': '../bower_components/backbone/backbone',
-            'marionette': '../bower_components/marionette/lib/backbone.marionette.min'
+            'marionette': '../bower_components/marionette/lib/backbone.marionette.min',
+            'text'       : '../bower_components/requirejs-text/text',
+            'foundation' : '../bower_components/foundation/js/foundation.min',
+            'lightbox2'  : '../bower_components/lightbox2/dist/js/lightbox.min'
         },
         name : 'main',
         preserveLicenseComments: false,
@@ -120,6 +140,6 @@ gulp.task('clean:html', function(){
     return del([ distBasePath + '/*.html' ]);
 });
 
-gulp.task('build', ['clean', 'requirejsBuild', 'sass', 'minify-html']);
+gulp.task('build', ['clean', 'requirejsBuild', 'sass', 'copy-images', 'copy-deps', 'copy-css', 'minify-html']);
 
 gulp.task('default', ['serve']);
