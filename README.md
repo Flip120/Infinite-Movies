@@ -12,12 +12,15 @@ npm install
 ```
 bower install
 ```
-----------
 
 ### **Running**
 You can run the server with :
 ```
 node bin/www
+```
+and later you can open the webapp in :
+```
+http://localhost:3000
 ```
 
 ### **Develop**
