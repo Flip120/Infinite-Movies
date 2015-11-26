@@ -23,3 +23,4 @@ define(['text!templates/main.html',
         movieImageBox     : imageBox
     };
 });
+
