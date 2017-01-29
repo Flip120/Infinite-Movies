@@ -3,7 +3,7 @@ Infinite Movies
 
 ### DEMO
 
-http://www.ccabanero.com:3000/
+https://boiling-sierra-80835.herokuapp.com/
 
 #### How to use
 
