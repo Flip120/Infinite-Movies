@@ -2,7 +2,7 @@
  * Created by Carlos on 1/10/15.
  */
 define(['underscore', 'marionette',
-        'Templates/template'],
+        'Templates/template-holder'],
     function(_, Mn, templates){
 
         return Mn.LayoutView.extend({

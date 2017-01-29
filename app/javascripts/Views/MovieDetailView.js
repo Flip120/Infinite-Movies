@@ -7,7 +7,7 @@ define(['underscore', 'backbone', 'marionette',
         'Models/Movie',
         'Collections/Cast',
         'Collections/Image',
-        'Templates/template'],
+        'Templates/template-holder'],
     function(_, Backbone, Mn, MovieCastView, MovieImageView, MovieModel, MovieCastCollection, MovieImageCollection, templates){
 
         return Mn.LayoutView.extend({

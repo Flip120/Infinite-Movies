@@ -2,7 +2,7 @@
  * Created by Carlos on 1/10/15.
  */
 define(['underscore', 'marionette',
-        'Views/MovieCellView', 'Templates/template'],
+        'Views/MovieCellView', 'Templates/template-holder'],
     function(_, Mn, MovieCellView, template){
         'use strict';
 
