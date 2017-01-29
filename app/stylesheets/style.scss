@@ -105,13 +105,33 @@ body {
 
 .movie-cell{
 
+  @media #{$small-only} {
+      height: 30px
+    }
+
+    @media #{$medium-only} {
+      height:  355px
+    }
+
+    @media #{$large-only} {
+      height: 295px;
+    }
+
+    @media #{$xlarge-only} {
+      height: 415px;
+    }
+
+    @media #{$xxlarge-only} {
+      height: 415px;
+    }
+
   .movie-info {
     position: absolute;
     height: 100%;
     font-weight: bold;
     text-align: center;
     display: block;
-    padding: 10px 20px;
+    padding: 10px 20px; 
     margin: 0 auto;
     width: 100%;
     text-shadow: 0px 1px 5px #000000;
@@ -155,6 +175,10 @@ body {
 
       @media #{$large-only} {
         font-size : 0.9em
+      }
+
+      .movie-img {
+        display: none;
       }
 
       @include transition(all, 0.2s, ease-in-out);
@@ -253,7 +277,7 @@ body {
     right: 30px;
     font-size: 2rem;
     color:white;
-    overflow-y:scroll;
+    overflow-y:hidden;
     overflow-x:hidden;
     z-index: 2;
     &:hover {
@@ -263,6 +287,7 @@ body {
 
   #detail-info-container {
     background-color: rgba(0,0,0,0.5);
+    height: 100%;
   }
 
   #movie-title {
