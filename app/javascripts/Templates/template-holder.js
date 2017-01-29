@@ -1,14 +1,14 @@
 /**
  * Created by Carlos on 1/10/15.
  */
-define(['text!templates/main.html',
-        'text!templates/movie-grid.html',
-        'text!templates/movies-cell.html',
-        'text!templates/movie-detail.html',
-        'text!templates/movie-cast-layout.html',
-        'text!templates/movie-cast-box.html',
-        'text!templates/movie-images-layout.html',
-        'text!templates/movie-image-box.html'],
+define(['text!Templates/main.html',
+        'text!Templates/movie-grid.html',
+        'text!Templates/movies-cell.html',
+        'text!Templates/movie-detail.html',
+        'text!Templates/movie-cast-layout.html',
+        'text!Templates/movie-cast-box.html',
+        'text!Templates/movie-images-layout.html',
+        'text!Templates/movie-image-box.html'],
     function(main, movieGrid, movieCell, movieDetail, castLayout, castBox, imagesLayout, imageBox){
     'use strict';
 
