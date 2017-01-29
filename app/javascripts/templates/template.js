@@ -22,5 +22,5 @@ define(['text!templates/main.html',
         movieImagesLayout : imagesLayout,
         movieImageBox     : imageBox
     };
-});
+}); 
 
