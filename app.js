@@ -21,7 +21,7 @@ function initializePassport(){
     passport.use(new GithubStrategy({
         clientID: gitHubData.clientId,
         clientSecret: gitHubData.clientSecret,
-        callbackURL: 'http://localhost:3000/auth/callback'
+        callbackURL: 'https://localhost:3000/auth/callback'
     }, function(accessToken, refreshToken, profile, done){
 
         process.nextTick(function () {
