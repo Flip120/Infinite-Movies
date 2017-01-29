@@ -100,6 +100,26 @@ body {
 .movie-grid {
   margin-top: 0px; }
 
+@media only screen and (max-width: 40em) {
+  .movie-cell {
+    height: 30px; } }
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .movie-cell {
+    height: 355px; } }
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+  .movie-cell {
+    height: 295px; } }
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) {
+  .movie-cell {
+    height: 415px; } }
+
+@media only screen and (min-width: 120.063em) and (max-width: 999999999999) {
+  .movie-cell {
+    height: 415px; } }
+
 .movie-cell .movie-info {
   position: absolute;
   height: 100%;
@@ -161,6 +181,8 @@ body {
     @media only screen and (min-width: 64.063em) and (max-width: 90em) {
       .movie-cell .movie-info .movie-desc {
         font-size: 0.9em; } }
+    .movie-cell .movie-info .movie-desc .movie-img {
+      display: none; }
   .movie-cell .movie-info:hover {
     background-color: rgba(0, 0, 0, 0.6) !important;
     cursor: pointer; }
@@ -217,13 +239,14 @@ body {
     right: 30px;
     font-size: 2rem;
     color: white;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
     z-index: 2; }
     .movie-detail .close-detail:hover {
       cursor: pointer; }
   .movie-detail #detail-info-container {
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%; }
   .movie-detail #movie-title {
     margin-top: 30px; }
     @media only screen and (max-width: 40em) {
