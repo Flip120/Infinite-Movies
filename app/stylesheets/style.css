@@ -100,115 +100,114 @@ body {
 .movie-grid {
   margin-top: 0px; }
 
-@media only screen and (max-width: 40em) {
-  .movie-cell {
-    height: 30px; } }
-
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  .movie-cell {
-    height: 355px; } }
-
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
-  .movie-cell {
-    height: 295px; } }
-
-@media only screen and (min-width: 90.063em) and (max-width: 120em) {
-  .movie-cell {
-    height: 415px; } }
-
-@media only screen and (min-width: 120.063em) and (max-width: 999999999999) {
-  .movie-cell {
-    height: 415px; } }
-
-.movie-cell .movie-info {
-  position: absolute;
-  height: 100%;
-  font-weight: bold;
-  text-align: center;
-  display: block;
-  padding: 10px 20px;
-  margin: 0 auto;
-  width: 100%;
-  text-shadow: 0px 1px 5px #000000; }
-  .movie-cell .movie-info .movie-name {
-    -webkit-transition: all 0.1s ease-in;
-    -moz-transition: all 0.1s ease-in;
-    -ms-transition: all 0.1s ease-in;
-    -o-transition: all 0.1s ease-in;
-    transition: all 0.1s ease-in;
-    color: #fff;
-    top: 50%;
-    left: 0; }
-    @media only screen and (max-width: 40em) {
-      .movie-cell .movie-info .movie-name {
-        font-size: 1.0em; } }
-    @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-      .movie-cell .movie-info .movie-name {
-        font-size: 1.0em; } }
-    @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-      .movie-cell .movie-info .movie-name {
-        font-size: 1.2em; } }
-    @media only screen and (min-width: 90.063em) and (max-width: 120em) {
-      .movie-cell .movie-info .movie-name {
-        font-size: 1.9em; } }
-    @media only screen and (min-width: 120.063em) and (max-width: 999999999999) {
-      .movie-cell .movie-info .movie-name {
-        font-size: 1.8em; } }
-  .movie-cell .movie-info .movie-desc {
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    webkit-animation-delay: 0.2s;
-    /* Chrome, Safari, Opera */
-    animation-delay: 0.2s;
-    color: #fff;
-    opacity: 0;
-    padding: 20px 10px 0px 10px;
-    font-size: 1.0rem;
-    font-weight: lighter;
-    text-align: center;
-    line-height: 14px;
-    bottom: 0;
-    left: 0; }
-    @media only screen and (max-width: 40em) {
-      .movie-cell .movie-info .movie-desc {
-        font-size: 0.6rem; } }
-    @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-      .movie-cell .movie-info .movie-desc {
-        font-size: 0.7em; } }
-    @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-      .movie-cell .movie-info .movie-desc {
-        font-size: 0.9em; } }
-    .movie-cell .movie-info .movie-desc .movie-img {
-      display: none; }
-  .movie-cell .movie-info:hover {
-    background-color: rgba(0, 0, 0, 0.6) !important;
-    cursor: pointer; }
-    .movie-cell .movie-info:hover .movie-name {
-      top: 30%;
-      color: #fff; }
-      @media only screen and (max-width: 40em) {
-        .movie-cell .movie-info:hover .movie-name {
-          display: none; } }
-      @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-        .movie-cell .movie-info:hover .movie-name {
-          top: 5%; } }
-    .movie-cell .movie-info:hover .movie-desc {
-      color: #fff;
-      opacity: 1;
-      padding-top: 0; }
-      @media only screen and (min-width: 64.063em) {
-        .movie-cell .movie-info:hover .movie-desc {
-          top: 60%; } }
-  .movie-cell .movie-info h3 {
-    color: #FFFFFF; }
-  .movie-cell .movie-info h3, .movie-cell .movie-info p {
+.movie-cell {
+  display: block; }
+  @media only screen and (max-width: 40em) {
+    .movie-cell {
+      max-height: 420px; } }
+  @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+    .movie-cell {
+      max-height: 355px; } }
+  @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+    .movie-cell {
+      max-height: 250px; } }
+  @media only screen and (min-width: 90.063em) and (max-width: 120em) {
+    .movie-cell {
+      max-height: 380px; } }
+  @media only screen and (min-width: 120.063em) and (max-width: 999999999999) {
+    .movie-cell {
+      max-height: 415px; } }
+  .movie-cell .movie-img {
+    width: 100%;
+    position: relative; }
+  .movie-cell .movie-info {
     position: absolute;
-    width: 100%; }
-  .movie-cell .movie-info img {
-    width: 100%; }
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    padding: 10px 20px;
+    margin: 0 auto;
+    text-shadow: 0px 1px 5px #000000;
+    z-index: 1; }
+    .movie-cell .movie-info .movie-name {
+      -webkit-transition: all 0.1s ease-in;
+      -moz-transition: all 0.1s ease-in;
+      -ms-transition: all 0.1s ease-in;
+      -o-transition: all 0.1s ease-in;
+      transition: all 0.1s ease-in;
+      color: #fff;
+      top: 50%;
+      left: 0; }
+      @media only screen and (max-width: 40em) {
+        .movie-cell .movie-info .movie-name {
+          font-size: 1.0em; } }
+      @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+        .movie-cell .movie-info .movie-name {
+          font-size: 1.0em; } }
+      @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+        .movie-cell .movie-info .movie-name {
+          font-size: 1.2em; } }
+      @media only screen and (min-width: 90.063em) and (max-width: 120em) {
+        .movie-cell .movie-info .movie-name {
+          font-size: 1.9em; } }
+      @media only screen and (min-width: 120.063em) and (max-width: 999999999999) {
+        .movie-cell .movie-info .movie-name {
+          font-size: 1.8em; } }
+    .movie-cell .movie-info .movie-desc {
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      webkit-animation-delay: 0.2s;
+      /* Chrome, Safari, Opera */
+      animation-delay: 0.2s;
+      color: #fff;
+      opacity: 0;
+      padding: 20px 10px 0px 10px;
+      font-size: 1.0rem;
+      font-weight: lighter;
+      text-align: center;
+      line-height: 14px;
+      bottom: 0;
+      left: 0; }
+      @media only screen and (max-width: 40em) {
+        .movie-cell .movie-info .movie-desc {
+          font-size: 0.6rem; } }
+      @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+        .movie-cell .movie-info .movie-desc {
+          font-size: 0.7em; } }
+      @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+        .movie-cell .movie-info .movie-desc {
+          font-size: 0.9em; } }
+    .movie-cell .movie-info:hover {
+      background-color: rgba(0, 0, 0, 0.6) !important;
+      cursor: pointer; }
+      .movie-cell .movie-info:hover .movie-name {
+        top: 30%;
+        color: #fff; }
+        @media only screen and (max-width: 40em) {
+          .movie-cell .movie-info:hover .movie-name {
+            display: none; } }
+        @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+          .movie-cell .movie-info:hover .movie-name {
+            top: 5%; } }
+      .movie-cell .movie-info:hover .movie-desc {
+        color: #fff;
+        opacity: 1;
+        padding-top: 0; }
+        @media only screen and (min-width: 64.063em) {
+          .movie-cell .movie-info:hover .movie-desc {
+            top: 60%; } }
+    .movie-cell .movie-info h3 {
+      color: #FFFFFF; }
+    .movie-cell .movie-info h3, .movie-cell .movie-info p {
+      position: absolute;
+      width: 100%; }
+    .movie-cell .movie-info img {
+      width: 100%; }
 
 .grid-loader {
   display: block;
@@ -245,8 +244,7 @@ body {
     .movie-detail .close-detail:hover {
       cursor: pointer; }
   .movie-detail #detail-info-container {
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%; }
+    background-color: rgba(0, 0, 0, 0.5); }
   .movie-detail #movie-title {
     margin-top: 30px; }
     @media only screen and (max-width: 40em) {
