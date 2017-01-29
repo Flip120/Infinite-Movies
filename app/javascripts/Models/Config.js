@@ -3,7 +3,7 @@
  */
 define(['backbone'], function(Backbone){
 
-    var baseUrl = 'https://localhost:3000/';
+    var baseUrl = '/';
 
     return Backbone.Model.extend({
 
