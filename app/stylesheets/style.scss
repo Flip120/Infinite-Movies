@@ -118,21 +118,25 @@ body {
     }
 
     @media #{$xlarge-only} {
-      max-height: 380px;
+      max-height: 350px;
     }
 
     @media #{$xxlarge-only} {
       max-height: 415px;
     }
       
-
+      
 
   display: block;
 
   .movie-img {
     // height: 100%;
     width: 100%;
-    position: relative
+    position: relative;
+    height:100%;
+    display:inline-block; 
+    vertical-align:text-center;
+    // transform-origin: 50% 50%;
   }
 
   .movie-info {
@@ -152,6 +156,7 @@ body {
       color: #fff;
       top: 50%;
       left : 0;
+      text-shadow: 1px 1px 7px rgb(255,252,0);
 
       @media #{$small-only} {
         font-size : 1.0em
@@ -293,7 +298,7 @@ body {
   }
 
   #detail-info-container {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.8);
     // height: 100%;
   }
 

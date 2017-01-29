@@ -113,13 +113,16 @@ body {
       max-height: 250px; } }
   @media only screen and (min-width: 90.063em) and (max-width: 120em) {
     .movie-cell {
-      max-height: 380px; } }
+      max-height: 350px; } }
   @media only screen and (min-width: 120.063em) and (max-width: 999999999999) {
     .movie-cell {
       max-height: 415px; } }
   .movie-cell .movie-img {
     width: 100%;
-    position: relative; }
+    position: relative;
+    height: 100%;
+    display: inline-block;
+    vertical-align: text-center; }
   .movie-cell .movie-info {
     position: absolute;
     width: 100%;
@@ -139,7 +142,8 @@ body {
       transition: all 0.1s ease-in;
       color: #fff;
       top: 50%;
-      left: 0; }
+      left: 0;
+      text-shadow: 1px 1px 7px #fffc00; }
       @media only screen and (max-width: 40em) {
         .movie-cell .movie-info .movie-name {
           font-size: 1.0em; } }
@@ -244,7 +248,7 @@ body {
     .movie-detail .close-detail:hover {
       cursor: pointer; }
   .movie-detail #detail-info-container {
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.8); }
   .movie-detail #movie-title {
     margin-top: 30px; }
     @media only screen and (max-width: 40em) {

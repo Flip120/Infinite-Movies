@@ -3,7 +3,7 @@
  */
 define(['text!templates/main.html',
         'text!Templates/movie-grid.html',
-        'text!Templates/movies-cell.html',
+        'text!templates/movies-cell.html',
         'text!Templates/movie-detail.html',
         'text!Templates/movie-cast-layout.html',
         'text!Templates/movie-cast-box.html',
